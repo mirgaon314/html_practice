@@ -6,18 +6,303 @@
         <meta name="author" content="Owen Park">
         <meta name="description" content="This page contains all.">
         <title>My First Web Page</title>
+        <!--short address -> reletive reference-->
         <link rel="icon" href="monsterHunter.png" type="image/x-icon">
         <link rel="stylesheet" href="main.css">
     </head>
 
     <body>
-        <h1>Only one h1</h1>
+        <header>
+            <h1>Owen Park</h1>
 
-        <h2>this is sub of h1</h2>  
-        <p>This is my first web page.</p>
+            <nav aria-labelledby="primary-navigation">
+                <ul>
+                    <li>
+                        <a href="#html">learn html</a>
+                    </li>
+                    <li>
+                        <a href="#next">next section</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </nav>
 
-        <h3>this is sub of h2</h3>  
-        <p>blah blah</p>
+        </header>
+
+        <hr>
+
+        <main>
+            <!--article has clear topic
+            section has generic info-->
+            <article id = "html">
+                <h2>Hello this is my portfolio prototype</h2>  
+                <p>
+                    planing a <abbr title="trading algorithm">
+                        <!--full address -> absolute reference-->
+                        <a href="https://github.com/mirgaon314"target="_blank">Startup</a>
+                    </abbr> could not be seen for others.
+                </p>
+                <section>
+                    <h3> section 1</h3>
+                    <!-- alt is kinda name for it, title won't seen, it is complementary text
+                    loading = lazy help to only load when it will seen-->
+                    <figure>
+                        <img src="img/monsterHunter.png" alt="MonsterHunter" title="long sword" width="960" height="540" loading="lazy">
+                        <figcaption>
+                            Monster Hunter Worlds
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <figcaption>
+                            this is code
+                        </figcaption>
+                        <p>
+                            <code>&lt;h1&gt;Hi&lt;h1&gt;</code>
+                        </p>
+                    </figure>
+                </section>
+
+                <section>
+                    <h3>this is sub of h2</h3>  
+                    <p>sub paragraph</p>
+                        <ol> <!-- ordered list-->
+                            <li>breaking line.</li>
+                            <li>...another line.</li>
+                            <li>hi <em>this is emphasized</em></li>
+                            <li>download some <a href="https://unsplash.com" target="_blank"> free image</a></li>
+                            <li>then <a href="https://irfanview.com" target="_blank">edit images</a> </li>
+                        </ol>
+                </section>
+            </article>
+
+            <!-- br*num will change into multiple of br-->
+            <br><br><br>
+            <hr>
+
+            <article id= "next">
+                <h2>this is sub of h1</h2>  
+                <section>
+                    <ul>
+                        <!-- &nbsp gives some white spaces-->
+                        <li><p>&nbsp;&nbsp;&nbsp;This is my first web page.</p></li>
+                        <li><p>another line.</p></li>
+                        <h3>this is sub of h2</h3>  
+                        <p>blah blah</p>
+
+                        <li>
+                            <address>
+                                918 W Illinois St. 61801, Urbana, Illinios, USA
+                                <br>
+                                201 Apgujeong-ro, Gangnam-gu, Seoul, South Korea
+                            </address>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <dl>
+                        <h3>descrpition list</h3>
+                        <dt>description title</dt>
+                        <dd>description detail</dd>
+                        <dt><strong> 2nd</strong> title</dt>
+                        <dd>2nd detail</dd>
+                    </dl>
+                </section>
+                <aside>
+                    <!--
+                        detail can use like questions
+                        detail and summary are set
+                    -->
+                    <details>
+                        <summary>Guess the <mark>number of hours</mark>  I code per day</summary>
+                        <p>I start <time datetime="05:00">5 am</time> and code <time datetime="PT3H">3 hours</time></p>
+                    </details>
+                </aside>
+
+                <br>
+
+                <table>
+                    <caption>My Daily Schedule</caption>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Activity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <time datetime="08:00">8am</time>-<time datetime="11:00">11am</time>
+                            </td>
+                            <td>Write code</td>
+                        </tr>
+                        <tr>
+                            <td scope="col">
+                                <time datetime="11:00">1am</time>-<time datetime="12:00">12pm</time>
+                            </td>
+                            <td>Eat Lunch</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <time datetime="12:00">12pm</time>-<time datetime="17:00">5pm</time>
+                            </td>
+                            <td>Study</td>
+                        </tr>
+                        <tr>
+
+                            <td rowspan="2">All other times</td>
+                            <td>Freetime</td>
+                        </tr>
+                        <tr>
+                            <td>Sleep</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"> whatever</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+
+            </article>
+
+            <hr>
+
+            <article id="contact">
+                <h2>
+                    Contact Me
+                </h2>
+                <p>I would like to hear from you</p>
+
+                <form action="https://httpbin.org/get" method="get">
+                    <fieldset> <!--square the whole thing-->
+                        <legend>Personal Info</legend>
+                        <p>
+                            <!-- id and for= should be match-->
+                            <label for="firstName">First Name:</label>
+                            <input type="text" name="firstName" id="firstName" placeholder="Owen" autocomplete="on" required autofocus>
+                            <!-- only one auto focus, it moves to this automatically when it reload-->
+                        </p>
+                        <p>
+                            <label for="lastName">Last Name:</label>
+                            <input type="text" name="lastName" id="lastName" placeholder="Owen" autocomplete="on" required>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" placeholder="secret" required>
+                        </p>
+                        <p>
+                            <label for="phone">Phone:</label>
+                            <input type="tel" name="phone" id="phone" placeholder="5555555555" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required>
+                        </p>
+                        <p>
+                            <label for="decade">Favorite Decade:</label>
+                            <input type="number" name="decade" id="decade" min="1950" max="2020" step="10" value="1980">
+                        </p>
+                        <p>
+                            <label for="coffee">Favorite Coffee:</label>
+                            <select name="coffee" id="coffee">
+                                <optgroup label="Coffees">
+                                    <option value="regular coffee">Regular Coffee</option>
+                                    <option value="iced coffee">Iced Coffee</option>
+                                </optgroup>
+                                <optgroup label="Espresso Drink">
+                                    <!-- selected will show first-->
+                                    <option value="latte" selected>Latte</option>
+                                </optgroup>
+                                <option value="other" >other</option>
+                            </select>
+                        </p>
+                        <p>
+                            <label for="coffee">Favorite Coffee2:</label>
+                            <input type="text" name="coffee" id="coffee" list="coffee-list">
+                                <datalist id="coffee-list">
+                                    <option value="regular coffee">
+                                    <option value="iced coffee"> 
+                                    <option value="latte" >
+                                    <option value="other" >
+                                </datalist>
+                            </select>
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>favorite food</legend>
+                        <p>
+                            <input type="radio" name="food" id="tacos" value="tacos">
+                            <label for="tacos">Tacos</label>
+                        </p>
+                        <p>
+                            <input type="radio" name="food" id="pizza" value="pizza">
+                            <label for="pizza">Pizza</label>
+                        </p>
+                        <p>
+                            <input type="radio" name="food" id="other" value="other">
+                            <label for="other">other</label>
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>pets?</legend>
+                        <p>
+                            <input type="checkbox" name="pets" id="dog" value="dog">
+                            <label for="dog">Dog</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="cat" value="cat">
+                            <label for="cat">Cat</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="fish" value="fish">
+                            <label for="fish">Fish</label>
+                        </p>
+                        <p>
+                            <input type="checkbox" name="pets" id="otherpets" value="otherpets">
+                            <label for="otherpets">other</label>
+                        </p>
+                    </fieldset>
+                    <br>
+                    <fieldset>
+                        <legend>note</legend>
+                        <label for="message">Your message:</label>
+                        <br>
+                        <textarea name="message" id="message" cols="30" rows="10" placeholder="type your message here"></textarea>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Submit</button>
+                    <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button>
+                    <button type="reset">Reset</button>
+                </form>
+            </article>
+
+        </main>
+        <!-- hr is straight line-->
+        <!-- w3c validation website to check the website vaild-->
+        <hr>
+        <footer>
+            <!-- link text rule #1
+                Avoid printing the full web address to the page
+                #2
+                avoid "links to" phrase
+                #3
+                keep your link text short, exact topic, not sentence
+                #4
+                don't say "click here"
+            -->
+            <p>
+                &lt;&lt;&lt; &copy; <a href="about.html" target="_blank">Owen Park</a> &gt;&gt;&gt;
+            </p>
+            
+
+            <p>
+                <a href="#">back to top</a>
+            </p>
+
+        </footer>
     </body>
 
 </html>
